@@ -30,7 +30,13 @@ System.register('recallfx/sitemap/components/SitemapSettingsModal', ['flarum/com
         }, {
           key: 'form',
           value: function form() {
-            var id = this.setting('recallfx.sitemap.id', 0) + 1;
+            var idFunc = this.setting('recallfx.sitemap.id', 0);
+            var id = 0;
+
+            if (typeof idFunc === 'function') {
+              id = idFunc() + 1;
+              idFunc(id);
+            }
 
             return [m(
               'div',
@@ -43,9 +49,7 @@ System.register('recallfx/sitemap/components/SitemapSettingsModal', ['flarum/com
               m(
                 'p',
                 null,
-                app.translator.trans('recallfx-sitemap.admin.text'),
-                ' = ',
-                id
+                app.translator.trans('recallfx-sitemap.admin.text')
               ),
               m(
                 'p',
