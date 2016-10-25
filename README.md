@@ -2,4 +2,4 @@
 Generate a sitemap for Flarum automatically
 
 # Install
-`composer require terabin/flarum-ext-sitemap`
+`composer require recallfx/flarum-ext-sitemap:dev-master`

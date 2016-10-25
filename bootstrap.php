@@ -1,9 +1,10 @@
 <?php
 
-use Terabin\Sitemap\Listener;
+use Recallfx\Sitemap\Listeners;
+
 use Illuminate\Contracts\Events\Dispatcher;
-use Flarum\Event\DiscussionWasStarted;
 
 return function (Dispatcher $events) {
-    $events->subscribe(Listener\GenerateSitemap::class);
+    $events->subscribe(Listeners\AddClientAssets::class);
+    $events->subscribe(Listeners\GenerateSitemap::class);
 };

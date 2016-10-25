@@ -1,0 +1,5 @@
+recallfx-sitemap:
+  admin:
+    title: Update sitemap
+    text: New sitemap id
+    link: Current sitemap.xml
