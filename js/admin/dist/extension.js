@@ -47,6 +47,15 @@ System.register('recallfx/sitemap/components/SitemapSettingsModal', ['flarum/com
                 ' = ',
                 id
               ),
+              m(
+                'p',
+                null,
+                m(
+                  'a',
+                  { href: '/sitemap.xml' },
+                  app.translator.trans('recallfx-sitemap.admin.link')
+                )
+              ),
               m('input', { type: 'hidden', className: 'FormControl', value: id })
             )];
           }
@@ -60,7 +69,7 @@ System.register('recallfx/sitemap/components/SitemapSettingsModal', ['flarum/com
 });;
 'use strict';
 
-System.register('recallfx/sitemap/main', ['flarum/extend', 'flarum/app', 'oberlo/oberloheader/components/SitemapSettingsModal'], function (_export, _context) {
+System.register('recallfx/sitemap/main', ['flarum/extend', 'flarum/app', 'recallfx/sitemap/components/SitemapSettingsModal'], function (_export, _context) {
   "use strict";
 
   var extend, app, SitemapSettingsModal;
@@ -69,8 +78,8 @@ System.register('recallfx/sitemap/main', ['flarum/extend', 'flarum/app', 'oberlo
       extend = _flarumExtend.extend;
     }, function (_flarumApp) {
       app = _flarumApp.default;
-    }, function (_oberloOberloheaderComponentsSitemapSettingsModal) {
-      SitemapSettingsModal = _oberloOberloheaderComponentsSitemapSettingsModal.default;
+    }, function (_recallfxSitemapComponentsSitemapSettingsModal) {
+      SitemapSettingsModal = _recallfxSitemapComponentsSitemapSettingsModal.default;
     }],
     execute: function () {
 
