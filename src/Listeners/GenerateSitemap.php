@@ -6,7 +6,6 @@ use DirectoryIterator;
 use Illuminate\Contracts\Events\Dispatcher;
 use Flarum\Event\SettingWasSet;
 use Flarum\Event\DiscussionWasStarted;
-use Flarum\Event\ConfigureWebApp;
 use Flarum\Core\Discussion;
 use Flarum\Core\User;
 use samdark\sitemap\Sitemap;
@@ -18,16 +17,9 @@ class GenerateSitemap
 {
     public function subscribe(Dispatcher $events)
     {
-//        $events->listen(ConfigureWebApp::class, function (ConfigureWebApp $event) {
-//            if ($event->isAdmin()) {
-//                $this->UpdateSitemap();
-//            }
-//        });
-
         $events->listen(DiscussionWasStarted::class, function (DiscussionWasStarted $event) {
             $this->UpdateSitemap();
         });
-
 
         $events->listen(SettingWasSet::class, function (SettingWasSet $event) {
             if ($event->key == 'recallfx.sitemap.id') {
