@@ -1,5 +1,5 @@
 recallfx-sitemap:
   admin:
     title: Update sitemap
-    text: New sitemap id
+    text: Press 'Save Changes' to updte sitemap.xml
     link: Current sitemap.xml
